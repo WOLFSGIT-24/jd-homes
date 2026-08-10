@@ -1,4 +1,4 @@
-export type Tab = 'home' | 'treatments' | 'campus' | 'consultation' | 'about-us' | 'booking';
+export type Tab = 'home' | 'treatments' | 'campus' | 'consultation' | 'about-us' | 'booking' | 'privacy-policy' | 'terms';
 
 export interface Treatment {
   id: string;

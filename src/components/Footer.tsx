@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Tab } from '../types';
-import { Leaf, Sprout, Heart, MapPin, Phone, Mail } from 'lucide-react';
+import { Leaf, Sprout, Heart, MapPin, Phone, Mail, ChevronDown } from 'lucide-react';
 
 interface FooterProps {
   activeTab: Tab;
@@ -8,6 +8,8 @@ interface FooterProps {
 }
 
 export default function Footer({ activeTab, setActiveTab }: FooterProps) {
+  const [isDisclaimerOpen, setIsDisclaimerOpen] = useState(false);
+
   const navItems = [
     { id: 'philosophy-section', label: 'Overview' },
     { id: 'lifestyle-experience', label: 'Lifestyle' },
@@ -88,8 +90,45 @@ export default function Footer({ activeTab, setActiveTab }: FooterProps) {
 
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 mt-16 pt-8 border-t border-[#cbc4d2]/30 text-center text-xs text-white/50">
-        © {new Date().getFullYear()} JD Homes. All rights reserved.
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 mt-16 pt-8 border-t border-[#cbc4d2]/30 mb-8">
+        <button 
+          onClick={() => setIsDisclaimerOpen(!isDisclaimerOpen)}
+          className="flex items-center gap-2 text-xs text-white/50 hover:text-white transition-colors cursor-pointer"
+        >
+          <span>Legal Disclaimer</span>
+          <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isDisclaimerOpen ? 'rotate-180' : ''}`} />
+        </button>
+        
+        <div className={`grid transition-all duration-300 ease-in-out ${isDisclaimerOpen ? 'grid-rows-[1fr] mt-4 opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+          <div className="overflow-hidden">
+            <div className="text-[10px] md:text-xs text-white/40 leading-relaxed text-justify">
+              <strong>Disclaimer:</strong> The images, renders, floor plans, specifications, and all other details herein are indicative and for illustrative purposes only. Prashantha Vana | JD Homes reserves the right to alter, modify, or change any or all details in the interest of the development and in accordance with applicable laws. All artist's impressions are used solely to illustrate amenities, interiors, specifications, and landscaping. A tolerance of ±3% is applicable in all unit carpet areas on account of design and construction variances. All brands, materials, and finishes stated are subject to the final decision of the project architect and interior consultant. This electronic / printed communication does not constitute an offer, invitation, or contract of any kind between JD Homes and the recipient. No booking or allotment shall be deemed to have been made on the basis of this material alone. Any purchaser of a residence in this development shall be governed solely by the terms and conditions of the Agreement for Sale executed between the parties, and no detail mentioned herein shall govern such transactions unless expressly provided in the said Agreement by the Promoter. The Promoter does not warrant or assume any liability for the accuracy, completeness, or currency of information contained herein. This communication has been prepared in accordance with the Real Estate (Regulation and Development) Act, 2016 (RERA) as applicable. Prospective customers are advised to independently verify all details — including carpet area, amenities, services, payment terms, and any other relevant terms — directly with the Promoter's authorised sales team by physically visiting the project site and the registered RERA portal. You are requested NOT to rely on information from any unauthorised website, unverified digital platform, or unregistered broker (online or offline) for details pertaining to Prashantha Vana or any other projects of JD Homes. RERA Reg. No.: Applicable as per Karnataka RERA regulations. Please verify on the official RERA Karnataka website.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-8 border-t border-[#cbc4d2]/30 text-center text-xs text-white/50 flex flex-col md:flex-row justify-between items-center gap-4">
+        <span>© {new Date().getFullYear()} JD Homes. All rights reserved.</span>
+        <div className="flex items-center gap-4">
+          <button 
+            onClick={() => {
+              setActiveTab('terms');
+            }}
+            className="hover:text-white transition-colors hover:underline"
+          >
+            Terms & Conditions
+          </button>
+          <span>|</span>
+          <button 
+            onClick={() => {
+              setActiveTab('privacy-policy');
+            }}
+            className="hover:text-white transition-colors hover:underline"
+          >
+            Privacy Policy
+          </button>
+        </div>
       </div>
     </footer>
   );

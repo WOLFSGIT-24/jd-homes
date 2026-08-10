@@ -8,6 +8,8 @@ import CampusTab from './components/CampusTab';
 import ConsultationTab from './components/ConsultationTab';
 import BookingTab from './components/BookingTab';
 import AboutUsTab from './components/AboutUsTab';
+import PrivacyPolicyTab from './components/PrivacyPolicyTab';
+import TermsTab from './components/TermsTab';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<Tab>('home');
@@ -68,6 +70,18 @@ export default function App() {
       case 'about-us':
         return (
           <AboutUsTab 
+            setActiveTab={setActiveTab}
+          />
+        );
+      case 'privacy-policy':
+        return (
+          <PrivacyPolicyTab 
+            setActiveTab={setActiveTab}
+          />
+        );
+      case 'terms':
+        return (
+          <TermsTab 
             setActiveTab={setActiveTab}
           />
         );
