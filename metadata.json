@@ -1,0 +1,6 @@
+{
+  "name": "Prashanthavana",
+  "description": "A serene Ayurvedic Healing Sanctuary offering forest-bathing, traditional Vastu-crafted spaces, Dravya Guna Vana herb gardens, personalized Sattvic retreats, and AI-guided Ayurvedic consultations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
