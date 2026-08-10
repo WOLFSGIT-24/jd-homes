@@ -14,6 +14,14 @@ interface HomeTabProps {
 export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: HomeTabProps) {
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
 
+  const scrollToForm = () => {
+    const el = document.getElementById('schedule-visit-section');
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
   const faqs = [
     {
       question: "Where is Prashantha Vana located?",
@@ -81,17 +89,14 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
 
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <button 
-                onClick={() => setActiveTab('booking')}
+                onClick={scrollToForm}
                 className="flex items-center justify-center gap-2 bg-[#D1A75B] text-black px-8 py-4 text-sm font-bold rounded-md hover:bg-[#b88c42] transition-all duration-300 shadow-lg cursor-pointer group active:scale-95"
               >
                 Schedule Your Visit
                 <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
               <button 
-                onClick={() => {
-                  const el = document.getElementById('daily-flow-section');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }}
+                onClick={scrollToForm}
                 className="flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white px-8 py-4 text-sm font-bold rounded-md hover:bg-white/20 transition-all duration-300 backdrop-blur-md cursor-pointer group active:scale-95"
               >
                 View Our Campus
@@ -118,7 +123,7 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
             Whether you're looking for a weekend retreat, a long-term investment, or a green legacy for your family, Prashantha Vana offers the perfect balance of natural beauty, modern infrastructure, and effortless management.
           </p>
           <button 
-            onClick={() => setActiveTab('about-us')}
+            onClick={scrollToForm}
             className="flex items-center gap-1.5 text-sm font-bold text-[#D4B47C] hover:underline"
             id="read-philosophy-btn"
           >
@@ -159,7 +164,7 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
 
           <div className="flex flex-col items-center justify-center gap-6">
             <button 
-              onClick={() => setActiveTab('booking')}
+              onClick={scrollToForm}
               className="bg-[#D4B47C] text-[#193A22] px-8 py-3 rounded-full font-bold text-sm hover:bg-white transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
             >
               Check Plot Availability
@@ -207,7 +212,7 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
             </div>
 
             <button 
-              onClick={() => setActiveTab('about-us')}
+              onClick={scrollToForm}
               className="w-max bg-[#193A22] text-white px-10 py-4 rounded-full font-bold text-sm md:text-base hover:bg-[#193A22]/90 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
             >
               Experience the Lifestyle
@@ -323,7 +328,7 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
           </div>
 
           <button 
-            onClick={() => setActiveTab('booking')}
+            onClick={scrollToForm}
             className="border border-[#193A22] text-[#193A22] px-10 py-3 rounded-full font-bold text-sm hover:bg-[#193A22] hover:text-white transition-colors duration-300"
           >
             Schedule a Site Visit
