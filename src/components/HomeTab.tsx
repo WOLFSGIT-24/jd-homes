@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Tab } from '../types';
 import { DOSHA_QUIZ } from '../data';
 import { 
@@ -13,6 +13,26 @@ interface HomeTabProps {
 
 export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: HomeTabProps) {
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
+  const galleryRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (window.innerWidth >= 768 || !galleryRef.current) return;
+      
+      const el = galleryRef.current;
+      const maxScroll = el.scrollWidth - el.clientWidth;
+      
+      if (el.scrollLeft >= maxScroll - 10) {
+        // Reset to start
+        el.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        // Scroll to next item (approx 85vw width)
+        el.scrollBy({ left: window.innerWidth * 0.85, behavior: 'smooth' });
+      }
+    }, 3000); // 3 seconds per slide
+
+    return () => clearInterval(interval);
+  }, []);
 
   const scrollToForm = () => {
     const el = document.getElementById('schedule-visit-section');
@@ -61,10 +81,15 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
     <div className="flex flex-col w-full font-body bg-[#FAF7F0]">
       {/* Banner / Welcome */}
       <section className="relative w-full h-screen min-h-[600px] flex items-center justify-start overflow-hidden bg-[#1d1b20]">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('/hero-bg.jpg')` }}
-        />
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/hero.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent mix-blend-multiply" />
 
@@ -724,9 +749,13 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div 
+            ref={galleryRef}
+            className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 -mx-6 px-6 md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-4 md:gap-6"
+            style={{ scrollbarWidth: 'none' }}
+          >
             {/* Row 1 & 2 Left */}
-            <div className="col-span-2 row-span-2 rounded-2xl overflow-hidden shadow-lg h-64 md:h-[424px]">
+            <div className="shrink-0 snap-center w-[85vw] md:w-auto col-span-2 row-span-2 rounded-2xl overflow-hidden shadow-lg h-[60vw] md:h-[424px]">
               <img
                 src="/gallery/1.png"
                 alt="Prashantha Vana Landscape"
@@ -735,7 +764,7 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
             </div>
 
             {/* Row 1 Right 1 */}
-            <div className="col-span-1 rounded-2xl overflow-hidden shadow-lg h-32 md:h-[200px]">
+            <div className="shrink-0 snap-center w-[85vw] md:w-auto col-span-1 rounded-2xl overflow-hidden shadow-lg h-[60vw] md:h-[200px]">
               <img
                 src="/gallery/2.jpg"
                 alt="Fruit Picking"
@@ -744,7 +773,7 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
             </div>
 
             {/* Row 1 Right 2 */}
-            <div className="col-span-1 rounded-2xl overflow-hidden shadow-lg h-32 md:h-[200px]">
+            <div className="shrink-0 snap-center w-[85vw] md:w-auto col-span-1 rounded-2xl overflow-hidden shadow-lg h-[60vw] md:h-[200px]">
               <img
                 src="/gallery/3.jpg"
                 alt="Plot Landscape"
@@ -753,7 +782,7 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
             </div>
 
             {/* Row 2 Right */}
-            <div className="col-span-2 md:col-span-2 rounded-2xl overflow-hidden shadow-lg h-32 md:h-[200px]">
+            <div className="shrink-0 snap-center w-[85vw] md:w-auto col-span-2 md:col-span-2 rounded-2xl overflow-hidden shadow-lg h-[60vw] md:h-[200px]">
               <img
                 src="/gallery/4.jpg"
                 alt="Entrance Gate"
@@ -762,21 +791,21 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
             </div>
 
             {/* Row 3 */}
-            <div className="col-span-2 rounded-2xl overflow-hidden shadow-lg h-40 md:h-[240px]">
+            <div className="shrink-0 snap-center w-[85vw] md:w-auto col-span-2 rounded-2xl overflow-hidden shadow-lg h-[60vw] md:h-[240px]">
               <img
                 src="/gallery/5.jpg"
                 alt="Courtyard House"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
-            <div className="col-span-1 rounded-2xl overflow-hidden shadow-lg h-40 md:h-[240px]">
+            <div className="shrink-0 snap-center w-[85vw] md:w-auto col-span-1 rounded-2xl overflow-hidden shadow-lg h-[60vw] md:h-[240px]">
               <img
                 src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=1000&q=80"
                 alt="Swimming Pool"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
-            <div className="col-span-1 rounded-2xl overflow-hidden shadow-lg h-40 md:h-[240px]">
+            <div className="shrink-0 snap-center w-[85vw] md:w-auto col-span-1 rounded-2xl overflow-hidden shadow-lg h-[60vw] md:h-[240px]">
               <img
                 src="/cottages.png"
                 alt="Cottages"
@@ -785,13 +814,20 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
             </div>
 
             {/* Row 4 */}
-            {/* <div className="col-span-2 md:col-span-4 rounded-2xl overflow-hidden shadow-lg h-48 md:h-[300px]">
+            <div className="shrink-0 snap-center w-[85vw] md:w-auto col-span-1 md:col-span-2 rounded-2xl overflow-hidden shadow-lg h-[60vw] md:h-[300px]">
               <img
-                src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=1000&q=80"
-                alt="Campfire"
+                src="/gallery/6.jpg"
+                alt="Plantation"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
-            </div> */}
+            </div>
+            <div className="shrink-0 snap-center w-[85vw] md:w-auto col-span-1 md:col-span-2 rounded-2xl overflow-hidden shadow-lg h-[60vw] md:h-[300px]">
+              <img
+                src="/gallery/7.jpg"
+                alt="Container Home"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
           </div>
         </div>
       </section>
