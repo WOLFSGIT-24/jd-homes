@@ -91,6 +91,18 @@ export default function Footer({ activeTab, setActiveTab }: FooterProps) {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 mt-16 pt-8 border-t border-[#cbc4d2]/30 mb-8">
+        <div className="mb-10">
+          <h4 className="text-[#D4B47C] font-bold text-xs md:text-sm uppercase tracking-[0.15em] mb-3">
+            Authorized Sales Partner
+          </h4>
+          <p className="text-white/80 text-sm md:text-base mb-3">
+            Wolf Media
+          </p>
+          <p className="text-white/50 text-xs md:text-sm italic">
+            This website is operated by an authorized marketing partner for Prashantha Vana by JD Homes.
+          </p>
+        </div>
+
         <button 
           onClick={() => setIsDisclaimerOpen(!isDisclaimerOpen)}
           className="flex items-center gap-2 text-xs text-white/50 hover:text-white transition-colors cursor-pointer"
