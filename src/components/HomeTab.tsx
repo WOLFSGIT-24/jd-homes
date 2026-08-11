@@ -53,7 +53,7 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
     },
     {
       question: "What is the starting investment?",
-      answer: "Investment opportunities at Prashantha Vana start from ₹58L, giving you access to premium farmland and all community amenities."
+      answer: "Investment opportunities at Prashantha Vana start from ₹56L, giving you access to premium farmland and all community amenities."
     },
     {
       question: "Is the farmland professionally managed?",
@@ -159,7 +159,7 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
               planned and professionally maintained, allowing you to experience
               the rewards of farmland ownership with complete peace of mind.
             </p>
-            <p className="text-sm md:text-base text-[#494551] leading-relaxed mb-6 font-light">
+            <p className="text-sm md:text-base text-[#494551] leading-relaxed mb-6">
               Whether you're looking for a weekend retreat, a long-term
               investment, or a green legacy for your family, Prashantha Vana
               offers the perfect balance of natural beauty, modern
@@ -527,7 +527,7 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
               <div className="flex flex-col">
-                <span className="text-3xl font-serif font-bold text-[#D4B47C]">
+                <span className="text-3xl font-bold text-[#D4B47C]">
                   10
                 </span>
                 <span className="text-[10px] uppercase tracking-wider text-white/60 mt-1">
@@ -535,7 +535,7 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
                 </span>
               </div>
               <div className="flex flex-col">
-                <span className="text-3xl font-serif font-bold text-[#D4B47C]">
+                <span className="text-3xl font-bold text-[#D4B47C]">
                   47
                 </span>
                 <span className="text-[10px] uppercase tracking-wider text-white/60 mt-1">
@@ -543,16 +543,19 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
                 </span>
               </div>
               <div className="flex flex-col">
-                <span className="text-3xl font-serif font-bold text-[#D4B47C]">
-                  ₹58L
-                </span>
+                <div className="text-3xl font-bold text-[#D4B47C] flex items-start">
+                  <span className="text-xl mt-1 mr-0.5">₹</span>
+                  <span>56</span>
+                  <span className="text-xl mt-auto mb-0.5 ml-1">L</span>
+                </div>
                 <span className="text-[10px] uppercase tracking-wider text-white/60 mt-1">
                   Starting From
                 </span>
               </div>
               <div className="flex flex-col">
-                <span className="text-3xl font-serif font-bold text-[#D4B47C]">
-                  75 min
+                <span className="text-3xl font-bold text-[#D4B47C] flex items-end">
+                  <span>75</span>
+                  <span className="text-xl mb-0.5 ml-1">min</span>
                 </span>
                 <span className="text-[10px] uppercase tracking-wider text-white/60 mt-1">
                   From Bengaluru
@@ -583,7 +586,7 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-2">
                   <label className="text-xs font-bold text-[#193A22]">
-                    Mobile Number
+                    Phone Number
                   </label>
                   <input
                     type="tel"
@@ -605,32 +608,14 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
 
               <div className="flex flex-col gap-2">
                 <label className="text-xs font-bold text-[#193A22]">
-                  Current City
+                  What is your planned investment range?
                 </label>
-                <input
-                  type="text"
-                  placeholder="e.g. Bengaluru"
-                  className="w-full px-4 py-3.5 rounded-xl border border-[#cbc4d2]/50 bg-white text-sm focus:outline-none focus:border-[#193A22] transition-colors shadow-sm"
-                />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="flex flex-col gap-2">
-                  <label className="text-xs font-bold text-[#193A22]">
-                    Investment Budget
-                  </label>
-                  <select className="w-full px-4 py-3.5 rounded-xl border border-[#cbc4d2]/50 bg-white text-sm focus:outline-none focus:border-[#193A22] transition-colors shadow-sm appearance-none">
-                    <option value="">Select range</option>
-                  </select>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label className="text-xs font-bold text-[#193A22]">
-                    Preferred Plot Size
-                  </label>
-                  <select className="w-full px-4 py-3.5 rounded-xl border border-[#cbc4d2]/50 bg-white text-sm focus:outline-none focus:border-[#193A22] transition-colors shadow-sm appearance-none">
-                    <option value="">Select size</option>
-                  </select>
-                </div>
+                <select className="w-full px-4 py-3.5 rounded-xl border border-[#cbc4d2]/50 bg-white text-sm focus:outline-none focus:border-[#193A22] transition-colors shadow-sm appearance-none">
+                  <option value="">Select range</option>
+                  <option value="56L-80L">₹56L – ₹80L</option>
+                  <option value="80L-1Cr">₹80L – ₹1 Cr</option>
+                  <option value="1Cr+">₹1 Cr+</option>
+                </select>
               </div>
 
               <div className="flex flex-col gap-2">
@@ -639,17 +624,11 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
                 </label>
                 <select className="w-full px-4 py-3.5 rounded-xl border border-[#cbc4d2]/50 bg-white text-sm focus:outline-none focus:border-[#193A22] transition-colors shadow-sm appearance-none">
                   <option value="">Select purpose</option>
+                  <option value="Self Use / Weekend Home">Self Use / Weekend Home</option>
+                  <option value="Investment">Investment</option>
+                  <option value="Both">Both</option>
+                  <option value="Exploring Options">Exploring Options</option>
                 </select>
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label className="text-xs font-bold text-[#193A22]">
-                  Preferred Site Visit Date
-                </label>
-                <input
-                  type="date"
-                  className="w-full px-4 py-3.5 rounded-xl border border-[#cbc4d2]/50 bg-white text-sm focus:outline-none focus:border-[#193A22] transition-colors shadow-sm text-[#494551]"
-                />
               </div>
 
               <button className="w-full bg-[#D4B47C] hover:bg-[#D4B47C]/90 text-[#193A22] font-bold py-4 rounded-xl shadow-md transition-all mt-4">
