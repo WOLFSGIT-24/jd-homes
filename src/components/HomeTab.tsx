@@ -149,16 +149,28 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 md:mb-16 divide-y md:divide-y-0 md:divide-x divide-[#D4B47C]/20">
             <div className="flex flex-col items-center pt-8 md:pt-0 first:pt-0">
-              <span className="text-2xl md:text-3xl text-[#D4B47C] mb-2 font-serif">₹799</span>
-              <span className="text-white/80 text-xs">Special Price per sq. ft.*</span>
+              <div className="text-3xl md:text-4xl text-[#D4B47C] mb-2 flex items-start justify-center font-bold">
+                <span className="text-xl md:text-2xl mt-0.5 md:mt-1 mr-0.5">₹</span>
+                <span>799</span>
+              </div>
+              <span className="text-white/80 text-xs text-center">Special Price per sq. ft.*</span>
             </div>
             <div className="flex flex-col items-center pt-8 md:pt-0">
-              <span className="text-2xl md:text-3xl text-[#D4B47C] mb-2 font-serif">₹58 L</span>
-              <span className="text-white/80 text-xs">Investment Starts From*</span>
+              <div className="text-3xl md:text-4xl text-[#D4B47C] mb-1 flex items-start justify-center font-bold">
+                <span className="text-xl md:text-2xl mt-0.5 md:mt-1 mr-0.5">₹</span>
+                <span>56</span>
+                <span className="text-xl md:text-2xl mt-auto mb-0.5 ml-1">L</span>
+              </div>
+              <span className="text-white/80 text-xs text-center">
+                Investment Starts From*<br />
+                <span className="text-[#D4B47C] inline-block mt-1">Limited-Period Opportunity</span>
+              </span>
             </div>
             <div className="flex flex-col items-center pt-8 md:pt-0">
-              <span className="text-2xl md:text-3xl text-[#D4B47C] mb-2 font-serif">6,000–15,000</span>
-              <span className="text-white/80 text-xs">Available Plot Sizes (sq. ft.)</span>
+              <div className="text-3xl md:text-4xl text-[#D4B47C] mb-2 flex items-start justify-center font-bold">
+                <span>6,000–15,000</span>
+              </div>
+              <span className="text-white/80 text-xs text-center">Available Plot Sizes (sq. ft.)</span>
             </div>
           </div>
 
