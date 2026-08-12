@@ -5,10 +5,10 @@ export default function PopupForm() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // Show the popup 3 seconds after the page loads
+    // Show the popup 10 seconds after the page loads
     const timer = setTimeout(() => {
       setIsOpen(true);
-    }, 3000);
+    }, 10000);
 
     return () => clearTimeout(timer);
   }, []);

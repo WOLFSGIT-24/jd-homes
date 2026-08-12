@@ -102,10 +102,10 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
             </div>
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl text-white leading-[1.1] tracking-tight mb-6 font-semibold">
-              More Than <span className="text-[#F2D792]">Farmland</span>.{" "}
+              More Than <span className="text-[#F2D792]">Farmland</span>{" "}
               <br className="hidden md:block" />
               A Life Surrounded <br className="hidden md:block" />
-              by <span className="text-[#F2D792]">Nature</span>.
+              by <span className="text-[#F2D792]">Nature</span>
             </h1>
 
             <p className="text-base sm:text-lg text-gray-200 mb-10 max-w-2xl font-normal leading-relaxed">
@@ -150,7 +150,7 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
               Our Foundation
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-[#1d1b20] mb-6 font-headline leading-tight">
-              Designed for Ownership. Managed for Peace of Mind.
+              Designed for Ownership Managed for Peace of Mind
             </h2>
             <div className="w-12 h-1 bg-[#D4B47C] mb-6 rounded-full" />
             <p className="text-sm md:text-base text-[#494551] leading-relaxed mb-4">
@@ -271,8 +271,8 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
               Experience
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-[#1d1b20] mb-12 font-headline leading-tight">
-              More Than Farmland.
-              <br />A Place to Slow Down.
+              More Than Farmland
+              <br />A Place to Slow Down
             </h2>
 
             <div className="flex flex-col mb-12">
@@ -319,8 +319,8 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
             Amenities
           </span>
           <h2 className="text-3xl md:text-5xl font-bold text-[#1d1b20] mb-16 font-headline leading-tight">
-            More Than Farmland.
-            <br />A Countryside Lifestyle.
+            More Than Farmland
+            <br />A Countryside Lifestyle
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -415,9 +415,9 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
             Why Prashantha Vana
           </span>
           <h2 className="text-3xl md:text-5xl font-bold text-[#1d1b20] mb-16 font-headline leading-tight">
-            Designed for Peace. Managed
+            Designed for Peace Managed
             <br />
-            for Convenience.
+            for Convenience
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
