@@ -47,7 +47,7 @@ export default function Footer({ activeTab, setActiveTab }: FooterProps) {
             <img src="/logo.png" alt="JD Homes Logo" className="h-16 w-auto object-contain" />
           </div>
           <p className="max-w-sm text-sm leading-relaxed mb-6 text-white/80">
-            Traditional Ayurvedic healing in a serene, professional environment. Dedicated to the ancient science of life for over three decades.
+            A premium farmland community offering individual ownership, modern infrastructure, and a peaceful countryside lifestyle.
           </p>
           <div className="flex gap-4 text-[#D4B47C]">
             <Sprout className="w-5 h-5 hover:text-white transition-colors" />
