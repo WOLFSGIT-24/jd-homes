@@ -80,11 +80,11 @@ export default function Footer({ activeTab, setActiveTab }: FooterProps) {
           </div>
           <div className="flex items-center gap-2.5 text-sm font-bold text-white">
             <Phone className="w-4 h-4 text-[#D4B47C] shrink-0" />
-            <span>+91 98765 43210</span>
+            <span>+91 9523879894</span>
           </div>
           <div className="flex items-center gap-2.5 text-sm">
             <Mail className="w-4 h-4 text-[#D4B47C] shrink-0" />
-            <a href="mailto:info@prashanthavana.com" className="hover:underline">info@prashanthavana.com</a>
+            <a href="mailto:mihirsantosh830@gmail.com" className="hover:underline">mihirsantosh830@gmail.com</a>
           </div>
         </div>
 

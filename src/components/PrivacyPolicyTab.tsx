@@ -121,8 +121,8 @@ export default function PrivacyPolicyTab({ setActiveTab }: PrivacyPolicyTabProps
           <p className="mb-4">For any privacy-related queries, please reach out to the Prashantha Vana sales team:</p>
           <ul className="space-y-2 text-[#1d1b20]">
             <li><strong>Project:</strong> Prashantha Vana | JD Homes</li>
-            <li><strong>Phone:</strong> +91 98765 43210</li>
-            <li><strong>Email:</strong> info@prashanthavana.com</li>
+            <li><strong>Phone:</strong> +91 9523879894</li>
+            <li><strong>Email:</strong> mihirsantosh830@gmail.com</li>
             <li><strong>Location:</strong> 123 Wellness Way, Nature Valley</li>
             <li><strong>RERA Reg. No.:</strong> Applicable as per Karnataka RERA regulations. Please verify on the official RERA Karnataka website.</li>
           </ul>
