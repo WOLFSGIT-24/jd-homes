@@ -92,8 +92,8 @@ export default function TermsTab({ setActiveTab }: TermsTabProps) {
           <p className="mb-4">For any queries regarding these terms, please contact the authorised sales team:</p>
           <ul className="space-y-2 text-[#1d1b20]">
             <li><strong>Project:</strong> Prashantha Vana | JD Homes</li>
-            <li><strong>Phone:</strong> +91 9523879894</li>
-            <li><strong>Email:</strong> mihirsantosh830@gmail.com</li>
+            <li><strong>Phone:</strong> 1800 313 2718</li>
+            <li><strong>Email:</strong> marketing@jdhomes.co.in</li>
             <li><strong>Location:</strong> 123 Wellness Way, Nature Valley</li>
           </ul>
         </section>

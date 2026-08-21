@@ -74,17 +74,30 @@ export default function Footer({ activeTab, setActiveTab }: FooterProps) {
         {/* Contact Column */}
         <div className="flex flex-col gap-4">
           <h4 className="text-white font-bold text-sm uppercase tracking-wider">Contact</h4>
-          <div className="flex items-start gap-2.5 text-sm">
-            <MapPin className="w-4 h-4 text-[#D4B47C] shrink-0 mt-0.5" />
-            <span>123 Wellness Way, Nature Valley</span>
+          <div className="flex flex-col gap-4 text-sm mb-2">
+            <div>
+              <span className="text-[#D4B47C] font-semibold text-xs block mb-1">Project Address:</span>
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-[#D4B47C] shrink-0 mt-0.5" />
+                <span className="text-white/90">Prashantha Vana, Kalluldi village, kasaba hobli, gouribidnur taluk, Karnataka 561208</span>
+              </div>
+            </div>
+            
+            <div>
+              <span className="text-[#D4B47C] font-semibold text-xs block mb-1">JD HOMES Head Office:</span>
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-[#D4B47C] shrink-0 mt-0.5" />
+                <span className="text-white/90">JD Homes.1247 , Sri Tulasi , 3rd Floor A Block , 17th Main, 20th Cross Rd, Sahakar Nagar, Bengaluru, Karnataka 560092</span>
+              </div>
+            </div>
           </div>
           <div className="flex items-center gap-2.5 text-sm font-bold text-white">
             <Phone className="w-4 h-4 text-[#D4B47C] shrink-0" />
-            <span>+91 9523879894</span>
+            <span>1800 313 2718</span>
           </div>
           <div className="flex items-center gap-2.5 text-sm">
             <Mail className="w-4 h-4 text-[#D4B47C] shrink-0" />
-            <a href="mailto:mihirsantosh830@gmail.com" className="hover:underline">mihirsantosh830@gmail.com</a>
+            <a href="mailto:marketing@jdhomes.co.in" className="hover:underline">marketing@jdhomes.co.in</a>
           </div>
         </div>
 

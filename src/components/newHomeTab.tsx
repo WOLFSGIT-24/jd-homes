@@ -79,9 +79,8 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
 
   return (
     <div className="flex flex-col w-full font-body bg-[#FAF7F0]">
-      
       {/* Banner / Welcome */}
-      <section className="relative w-full min-h-screen pt-24 pb-16 lg:py-0 lg:h-screen lg:min-h-[700px] flex items-center justify-start overflow-x-hidden bg-[#1d1b20]">
+      <section className="relative w-full h-screen min-h-[600px] flex items-center justify-start overflow-hidden bg-[#1d1b20]">
         <video 
           autoPlay 
           loop 
@@ -91,10 +90,10 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
         >
           <source src="/hero.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent mix-blend-multiply" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full mt-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full mt-24 md:mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="max-w-3xl flex flex-col items-start text-left">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 bg-black/40 border border-white/10 rounded-md backdrop-blur-sm">
               <span className="text-[10px] md:text-xs font-bold tracking-widest text-[#D4B47C] uppercase">
@@ -102,12 +101,12 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[1.1] tracking-tight mb-6 font-semibold">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl text-white leading-[1.1] tracking-tight mb-6 font-semibold">
               Own a Managed <br className="hidden md:block" />
               <span className="text-[#F2D792]">Farmland</span> Near Bangalore
             </h1>
 
-            <p className="text-base sm:text-lg text-gray-200 mb-6 max-w-xl font-normal leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-200 mb-6 max-w-2xl font-normal leading-relaxed">
               A professionally managed forest community near Gauribidanur, just 75 minutes from Bangalore, designed for peaceful weekends, nature living and long-term ownership.
             </p>
 
@@ -152,8 +151,83 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
             </div>
           </div>
         </div>
+        {/* Right Column: Form Card */}
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-[2rem] p-8 md:p-10 shadow-2xl flex flex-col">
+            <div className="grid grid-cols-1 gap-6">
+              <div className="flex flex-col gap-2">
+                <label className="text-xs font-bold text-white">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  placeholder="Enter your full name"
+                  className="w-full px-4 py-3.5 rounded-xl border border-white/30 bg-white/20 text-white placeholder-white/50 text-sm focus:outline-none focus:border-[#193A22] transition-colors shadow-sm"
+                />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="flex flex-col gap-2">
+                  <label className="text-xs font-bold text-white">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    placeholder="10-digit mobile number"
+                    className="w-full px-4 py-3.5 rounded-xl border border-white/30 bg-white/20 text-white placeholder-white/50 text-sm focus:outline-none focus:border-[#193A22] transition-colors shadow-sm"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-xs font-bold text-white">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="you@email.com"
+                    className="w-full px-4 py-3.5 rounded-xl border border-white/30 bg-white/20 text-white placeholder-white/50 text-sm focus:outline-none focus:border-[#193A22] transition-colors shadow-sm"
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <label className="text-xs font-bold text-white">
+                  What is your planned investment range?
+                </label>
+                <select className="w-full px-4 py-3.5 rounded-xl border border-white/30 bg-white/20 text-white placeholder-white/50 text-sm focus:outline-none focus:border-[#193A22] transition-colors shadow-sm appearance-none">
+                  <option value="">Select range</option>
+                  <option value="56L-80L">₹56L – ₹80L</option>
+                  <option value="80L-1Cr">₹80L – ₹1 Cr</option>
+                  <option value="1Cr+">₹1 Cr+</option>
+                </select>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <label className="text-xs font-bold text-white">
+                  Purchase Purpose
+                </label>
+                <select className="w-full px-4 py-3.5 rounded-xl border border-white/30 bg-white/20 text-white placeholder-white/50 text-sm focus:outline-none focus:border-[#193A22] transition-colors shadow-sm appearance-none">
+                  <option value="">Select purpose</option>
+                  <option value="Self Use / Weekend Home">Self Use / Weekend Home</option>
+                  <option value="Investment">Investment</option>
+                  <option value="Both">Both</option>
+                  <option value="Exploring Options">Exploring Options</option>
+                </select>
+              </div>
+
+              <button className="w-full bg-[#D4B47C] hover:bg-[#D4B47C]/90 text-[#193A22] font-bold py-4 rounded-xl shadow-md transition-all mt-4">
+                Request Site Visit
+              </button>
+
+              <p className="text-[10px] text-[#494551] text-center mt-2 leading-relaxed">
+                By submitting this form, you agree to receive calls, WhatsApp
+                messages and project updates from JD Homes.
+              </p>
+            </div>
+          
+          </div>
+        </div>
       </section>
-{/* 4-Point USP Strip (Marquee) */}
+
+      {/* 4-Point USP Strip (Marquee) */}
       <section className="w-full bg-[#0E2516] border-y border-[#D4B47C]/20 relative z-20 shadow-xl overflow-hidden py-4 md:py-4">
         <div className="flex w-max animate-marquee items-center cursor-default text-xs md:text-sm uppercase tracking-[0.15em] font-bold">
           {[1, 2, 3, 4].map((set) => (
@@ -186,82 +260,107 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
         </div>
       </section>
 
-      
-      {/* Why Us Section (Redesigned) */}
-      <section className="w-full bg-[#FAF7F0] py-20 md:py-24" id="why-us-section">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-            <span className="text-[#D4B47C] font-bold tracking-[0.2em] uppercase text-xs mb-4 block">
-              Why Prashantha Vana
+      {/* Philosophy Callout */}
+      <section className="w-full bg-[#FAF7F0]" id="philosophy-section">
+        <div className="py-16 md:py-24 px-6 lg:px-12 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-center">
+          <div
+            className="lg:col-span-6 rounded-3xl overflow-hidden shadow-xl h-80 md:h-[450px] bg-cover bg-center"
+            style={{ backgroundImage: `url('/foundation.jpg')` }}
+          ></div>
+
+          <div className="lg:col-span-6 flex flex-col justify-center">
+            <span className="text-[#D4B47C] font-bold tracking-widest uppercase text-xs mb-2 block">
+              Our Foundation
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-[#193A22] font-headline leading-tight">
-              Designed for Peace, <br className="hidden md:block" /> Managed for Convenience
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1d1b20] mb-6 font-headline leading-tight">
+              Designed for Ownership Managed for Peace of Mind
             </h2>
+            <div className="w-12 h-1 bg-[#D4B47C] mb-6 rounded-full" />
+            <p className="text-sm md:text-base text-[#494551] leading-relaxed mb-4">
+              Owning farmland should be about enjoying nature—not managing it.
+              At Prashantha Vana, every aspect of the community is thoughtfully
+              planned and professionally maintained, allowing you to experience
+              the rewards of farmland ownership with complete peace of mind.
+            </p>
+            <p className="text-sm md:text-base text-[#494551] leading-relaxed mb-6">
+              Whether you're looking for a weekend retreat, a long-term
+              investment, or a green legacy for your family, Prashantha Vana
+              offers the perfect balance of natural beauty, modern
+              infrastructure, and effortless management.
+            </p>
+            <button
+              onClick={scrollToForm}
+              className="flex items-center gap-1.5 text-sm font-bold text-[#D4B47C] hover:underline"
+              id="read-philosophy-btn"
+            >
+              Explore Our Infrastructure <ChevronRight className="w-4 h-4" />
+            </button>
           </div>
-
-          {/* Bento Box Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
-            {/* Box 1: Large Image Background (Takes up 2 columns) */}
-            <div className="md:col-span-2 relative rounded-[2rem] overflow-hidden group shadow-xl">
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors z-10 duration-500" />
-              <img src="/foundation.jpg" alt="Individual Ownership" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 z-20 p-8 md:p-10 flex flex-col justify-end">
-                <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center mb-6 border border-white/30">
-                  <span className="text-white font-serif font-bold text-xl">I</span>
-                </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Individual Ownership</h3>
-                <p className="text-white/90 text-sm md:text-base max-w-md leading-relaxed">
-                  Own a clearly identified private farmland plot within a secure, planned community. Your personal sanctuary in nature.
-                </p>
-              </div>
-            </div>
-
-            {/* Box 2: Professionally Managed (Solid Color or Glass) */}
-            <div className="md:col-span-1 bg-[#193A22] rounded-[2rem] p-8 md:p-10 flex flex-col justify-between relative overflow-hidden group shadow-xl">
-              <div className="absolute top-0 right-0 w-48 h-48 bg-[#D4B47C]/10 rounded-full blur-3xl group-hover:bg-[#D4B47C]/20 transition-colors duration-500" />
-              <div className="relative z-10">
-                <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-6 border border-white/20">
-                  <span className="text-[#D4B47C] font-serif font-bold text-xl">II</span>
-                </div>
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4 leading-tight">Professionally Managed</h3>
-              </div>
-              <p className="text-white/80 text-sm md:text-base leading-relaxed relative z-10">
-                Enjoy farmland ownership without the daily responsibility of maintaining the plantation and common infrastructure.
-              </p>
-            </div>
-
-            {/* Box 3: Connected Yet Peaceful */}
-            <div className="md:col-span-1 bg-white border border-[#cbc4d2]/30 shadow-xl rounded-[2rem] p-8 md:p-10 flex flex-col justify-between group hover:border-[#D4B47C]/50 transition-colors duration-500">
-              <div>
-                <div className="w-12 h-12 bg-[#FAF7F0] rounded-full flex items-center justify-center mb-6 text-[#193A22]">
-                  <span className="font-serif font-bold text-xl">III</span>
-                </div>
-                <h3 className="text-xl md:text-2xl font-bold text-[#1d1b20] mb-4 leading-tight">Connected Yet Peaceful</h3>
-              </div>
-              <p className="text-[#494551] text-sm md:text-base leading-relaxed">
-                Experience peaceful countryside living with convenient main-road connectivity near Gauribidanur, just 75 mins from Bengaluru.
-              </p>
-            </div>
-
-            {/* Box 4: Lifestyle and Investment (Image background) */}
-            <div className="md:col-span-2 relative rounded-[2rem] overflow-hidden group shadow-xl">
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-10" />
-              <img src="/landscaped.jpg" alt="Lifestyle and Investment" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 z-20 p-8 md:p-10 flex flex-col justify-end">
-                <div className="w-12 h-12 bg-black/30 backdrop-blur-md rounded-full flex items-center justify-center mb-6 border border-white/20">
-                  <span className="text-white font-serif font-bold text-xl">IV</span>
-                </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Lifestyle & Investment</h3>
-                <p className="text-white/90 text-sm md:text-base max-w-md leading-relaxed">
-                  Use your farmland as a weekend retreat, a family escape, or a high-potential long-term land investment.
-                </p>
-              </div>
-            </div>
-          </div>
-          
         </div>
       </section>
-{/* Gallery Section */}
+
+      {/* Lifestyle Experience Section */}
+      <section
+        className="w-full bg-[#FAF7F0] py-16 md:py-24"
+        id="lifestyle-experience"
+      >
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-start">
+          {/* Left Column: Image & Text */}
+          <div className="flex flex-col gap-10">
+            <div className="rounded-3xl overflow-hidden shadow-2xl h-80 md:h-[450px] w-full">
+              <img
+                src="https://images.unsplash.com/photo-1596436889106-be35e843f974?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                alt="Prashantha Vana Lifestyle"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+          </div>
+
+          {/* Right Column: List & CTA */}
+          <div className="flex flex-col justify-center lg:pl-8">
+            <span className="text-[#D4B47C] font-bold tracking-[0.2em] uppercase text-xs mb-3 block">
+              Experience
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1d1b20] mb-12 font-headline leading-tight">
+              More Than Farmland
+              <br />A Place to Slow Down
+            </h2>
+
+            <div className="flex flex-col mb-12">
+              {[
+                "Morning walks through green plantations",
+                "Open spaces to relax and unwind",
+                "Family-friendly recreational areas",
+                "Landscaped gardens and gathering spaces",
+                "Fresh air and serene natural surroundings",
+                "Peaceful weekend escapes from city life",
+              ].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center gap-4 py-4 border-b border-[#cbc4d2]/30 last:border-0"
+                >
+                  <Check
+                    className="w-4 h-4 text-[#193A22] shrink-0"
+                    strokeWidth={3}
+                  />
+                  <span className="text-sm md:text-base text-[#494551] font-medium">
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <button
+              onClick={scrollToForm}
+              className="w-max bg-[#193A22] text-white px-10 py-4 rounded-full font-bold text-sm md:text-base hover:bg-[#193A22]/90 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
+            >
+              Experience the Lifestyle
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
       <section
         className="w-full bg-[#FAF7F0] py-16 md:py-24"
         id="gallery-section"
@@ -309,7 +408,7 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
             </div>
 
             {/* Row 2 Right */}
-            <div className="shrink-0 snap-center w-[85vw] md:w-auto col-span-2 rounded-2xl overflow-hidden shadow-lg h-[60vw] md:h-[200px]">
+            <div className="shrink-0 snap-center w-[85vw] md:w-auto col-span-2 md:col-span-2 rounded-2xl overflow-hidden shadow-lg h-[60vw] md:h-[200px]">
               <img
                 src="/gallery/4.jpg"
                 alt="Entrance Gate"
@@ -317,20 +416,41 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
               />
             </div>
 
-            {/* Row 3 Left */}
-            <div className="shrink-0 snap-center w-[85vw] md:w-auto col-span-2 rounded-2xl overflow-hidden shadow-lg h-[60vw] md:h-[300px]">
+            {/* Row 3 */}
+            <div className="shrink-0 snap-center w-[85vw] md:w-auto col-span-2 rounded-2xl overflow-hidden shadow-lg h-[60vw] md:h-[240px]">
               <img
                 src="/gallery/5.jpg"
                 alt="Courtyard House"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
+            <div className="shrink-0 snap-center w-[85vw] md:w-auto col-span-1 rounded-2xl overflow-hidden shadow-lg h-[60vw] md:h-[240px]">
+              <img
+                src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=1000&q=80"
+                alt="Swimming Pool"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <div className="shrink-0 snap-center w-[85vw] md:w-auto col-span-1 rounded-2xl overflow-hidden shadow-lg h-[60vw] md:h-[240px]">
+              <img
+                src="/cottages.png"
+                alt="Cottages"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
 
-            {/* Row 3 Right */}
-            <div className="shrink-0 snap-center w-[85vw] md:w-auto col-span-2 rounded-2xl overflow-hidden shadow-lg h-[60vw] md:h-[300px]">
+            {/* Row 4 */}
+            <div className="shrink-0 snap-center w-[85vw] md:w-auto col-span-1 md:col-span-2 rounded-2xl overflow-hidden shadow-lg h-[60vw] md:h-[300px]">
               <img
                 src="/gallery/6.jpg"
                 alt="Plantation"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <div className="shrink-0 snap-center w-[85vw] md:w-auto col-span-1 md:col-span-2 rounded-2xl overflow-hidden shadow-lg h-[60vw] md:h-[300px]">
+              <img
+                src="/gallery/7.jpg"
+                alt="Container Home"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -338,104 +458,77 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
         </div>
       </section>
 
-      {/* Location Advantage Section (Redesigned) */}
+      {/* Location Advantage Section */}
       <section
-        className="w-full bg-[#193A22] py-20 md:py-32 relative overflow-hidden"
+        className="w-full bg-[#EEE3D3] py-16 md:py-24"
         id="location-advantage-section"
       >
-        {/* Subtle Background Elements */}
-        <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-[#D4B47C]/10 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-[#D4B47C]/10 rounded-full blur-[120px] pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-            <span className="text-[#D4B47C] font-bold tracking-[0.2em] uppercase text-xs mb-4 block">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
+          {/* Left Column: Text */}
+          <div className="flex flex-col text-left">
+            <span className="text-[#D4B47C] font-bold tracking-[0.2em] uppercase text-xs mb-3 block">
               Location Advantage
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-headline leading-tight">
-              Peaceful Countryside with <br className="hidden md:block" /> Convenient Connectivity
+            <h2 className="text-3xl md:text-4xl font-bold text-[#193A22] mb-6 font-headline leading-tight">
+              Peaceful Countryside with
+              <br />
+              Convenient Connectivity
             </h2>
-            <p className="text-sm md:text-base text-gray-400 font-medium">
+            <p className="text-sm md:text-base text-[#494551] font-medium mb-10">
               Prashantha Vana – Gauribidanur <span className="hidden md:inline mx-2 text-[#D4B47C]">|</span><br className="md:hidden" /> Well Connected. Close to Nature.
             </p>
-          </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12">
-            
-            {/* Left/Top: Glassmorphism Details Card */}
-            <div className="lg:col-span-5 flex flex-col gap-4">
-              <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-[2rem] p-8 md:p-10 h-full flex flex-col justify-center shadow-2xl">
-                
-                <div className="flex flex-col gap-6">
-                  <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors duration-300">
-                    <div className="w-10 h-10 rounded-full bg-[#D4B47C]/20 flex items-center justify-center shrink-0 border border-[#D4B47C]/30">
-                      <Compass size={18} className="text-[#D4B47C]" />
-                    </div>
-                    <div>
-                      <h4 className="text-white font-bold text-base mb-1">State Highway 9</h4>
-                      <p className="text-gray-400 text-sm">Located directly on SH 9 with excellent main-road connectivity.</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors duration-300">
-                    <div className="w-10 h-10 rounded-full bg-[#D4B47C]/20 flex items-center justify-center shrink-0 border border-[#D4B47C]/30">
-                      <Clock size={18} className="text-[#D4B47C]" />
-                    </div>
-                    <div>
-                      <h4 className="text-white font-bold text-base mb-1">75 Mins from Bengaluru</h4>
-                      <p className="text-gray-400 text-sm">Quick access via Airport Road for a stress-free weekend commute.</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors duration-300">
-                    <div className="w-10 h-10 rounded-full bg-[#D4B47C]/20 flex items-center justify-center shrink-0 border border-[#D4B47C]/30">
-                      <Landmark size={18} className="text-[#D4B47C]" />
-                    </div>
-                    <div>
-                      <h4 className="text-white font-bold text-base mb-1">Heritage Landmarks</h4>
-                      <p className="text-gray-400 text-sm">20 mins from Gudibande Fort, 25 mins from Lepakshi, and 30 mins from Makalidurga.</p>
-                    </div>
-                  </div>
+            <div className="flex flex-col gap-5 mb-12">
+              {[
+                "Located on State Highway 9 with excellent main-road connectivity",
+                "75 mins from Bangalore via Airport Road",
+                "20 mins from Gudibande Fort",
+                "25 mins from Lepakshi",
+                "30 mins from Makalidurga",
+                "Surrounded by open countryside and plantations",
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-sm bg-[#D4B47C] mt-2 shrink-0 transform rotate-45" />
+                  <span className="text-sm md:text-base text-[#494551] font-light">
+                    {item}
+                  </span>
                 </div>
-
-                <div className="mt-10">
-                  <button
-                    onClick={() =>
-                      window.open(
-                        "https://maps.google.com/maps?ll=13.643381,77.543675&z=16&t=m&hl=en&gl=IN&mapclient=embed&cid=9940362746835670606",
-                        "_blank"
-                      )
-                    }
-                    className="w-full bg-[#D4B47C] text-black py-4 rounded-xl font-bold text-sm hover:bg-[#b88c42] transition-all shadow-lg flex justify-center items-center gap-2 group"
-                  >
-                    Get Directions
-                    <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              </div>
+              ))}
             </div>
 
-            {/* Right/Bottom: Map Embed */}
-            <div className="lg:col-span-7 rounded-[2rem] overflow-hidden shadow-2xl h-[400px] md:h-[550px] w-full relative border border-white/10 group">
-              {/* Optional overlay to make map darker initially, lifting on hover */}
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-700 pointer-events-none z-10" />
+            <button
+              onClick={() =>
+                window.open(
+                  "https://maps.google.com/maps?ll=13.643381,77.543675&z=16&t=m&hl=en&gl=IN&mapclient=embed&cid=9940362746835670606",
+                  "_blank",
+                )
+              }
+              className="w-max border border-[#193A22] text-[#193A22] px-10 py-3 rounded-full font-bold text-sm hover:bg-[#193A22] hover:text-white transition-colors duration-300"
+            >
+              Get Directions
+            </button>
+          </div>
+
+          {/* Right Column: Map Embed */}
+          <div className="rounded-3xl overflow-hidden shadow-2xl h-80 md:h-[450px] w-full bg-white relative p-4 border border-[#cbc4d2]/30">
+            <div className="w-full h-full rounded-2xl overflow-hidden">
               <iframe
                 src="https://maps.google.com/maps?ll=13.643381,77.543675&z=16&t=m&hl=en&gl=IN&mapclient=embed&cid=9940362746835670606&output=embed"
                 width="100%"
                 height="100%"
-                style={{ border: 0, filter: 'grayscale(30%) contrast(110%)' }}
+                style={{ border: 0 }}
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Prashantha Vana Location"
-                className="w-full h-full relative z-0"
+                className="w-full h-full"
               ></iframe>
             </div>
-
           </div>
         </div>
       </section>
-{/* Amenities Section */}
+
+      {/* Amenities Section */}
       <section
         className="w-full bg-[#EEE3D3] py-16 md:py-24"
         id="amenities-section"
@@ -531,204 +624,169 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
         </div>
       </section>
 
-      
-      {/* Managed Farmland - How It Works Section */}
-      <section className="w-full bg-white py-20 md:py-32 border-y border-[#D4B47C]/20" id="how-it-works-section">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
-            <span className="text-[#D4B47C] font-bold tracking-[0.2em] uppercase text-xs mb-4 block">
-              The Process
-            </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-[#193A22] font-headline leading-tight">
-              Managed Farmland <br className="hidden md:block" /> How It Works
-            </h2>
-          </div>
-
-          <div className="relative">
-            {/* Horizontal Line connector (Desktop only) */}
-            <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-gradient-to-r from-[#D4B47C]/10 via-[#D4B47C] to-[#D4B47C]/10 z-0"></div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 relative z-10">
-              
-              {/* Step 1 */}
-              <div className="flex flex-col items-center text-center group">
-                <div className="w-24 h-24 rounded-full bg-[#FAF7F0] border-2 border-[#D4B47C] flex items-center justify-center mb-8 shadow-xl group-hover:-translate-y-2 transition-transform duration-500 relative">
-                  <div className="absolute inset-0 bg-[#D4B47C]/10 rounded-full scale-0 group-hover:scale-150 transition-transform duration-700 pointer-events-none"></div>
-                  <Award size={32} className="text-[#193A22] relative z-10" />
-                  <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-[#193A22] text-white flex items-center justify-center font-bold text-sm border-2 border-white">
-                    1
-                  </div>
-                </div>
-                <h3 className="text-xl md:text-2xl font-bold text-[#1d1b20] mb-4">You Own the Land</h3>
-                <p className="text-[#494551] text-sm leading-relaxed max-w-sm">
-                  You purchase and register a clearly demarcated plot in your name, securing a tangible, high-value real estate asset.
-                </p>
-              </div>
-
-              {/* Step 2 */}
-              <div className="flex flex-col items-center text-center group">
-                <div className="w-24 h-24 rounded-full bg-[#FAF7F0] border-2 border-[#D4B47C] flex items-center justify-center mb-8 shadow-xl group-hover:-translate-y-2 transition-transform duration-500 relative">
-                  <div className="absolute inset-0 bg-[#D4B47C]/10 rounded-full scale-0 group-hover:scale-150 transition-transform duration-700 pointer-events-none"></div>
-                  <RefreshCw size={32} className="text-[#193A22] relative z-10" />
-                  <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-[#193A22] text-white flex items-center justify-center font-bold text-sm border-2 border-white">
-                    2
-                  </div>
-                </div>
-                <h3 className="text-xl md:text-2xl font-bold text-[#1d1b20] mb-4">We Manage the Estate</h3>
-                <p className="text-[#494551] text-sm leading-relaxed max-w-sm">
-                  JD Homes takes over the day-to-day hassles. We professionally maintain the plantations, 24/7 security, roads, and clubhouse.
-                </p>
-              </div>
-
-              {/* Step 3 */}
-              <div className="flex flex-col items-center text-center group">
-                <div className="w-24 h-24 rounded-full bg-[#FAF7F0] border-2 border-[#D4B47C] flex items-center justify-center mb-8 shadow-xl group-hover:-translate-y-2 transition-transform duration-500 relative">
-                  <div className="absolute inset-0 bg-[#D4B47C]/10 rounded-full scale-0 group-hover:scale-150 transition-transform duration-700 pointer-events-none"></div>
-                  <Heart size={32} className="text-[#193A22] relative z-10" />
-                  <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-[#193A22] text-white flex items-center justify-center font-bold text-sm border-2 border-white">
-                    3
-                  </div>
-                </div>
-                <h3 className="text-xl md:text-2xl font-bold text-[#1d1b20] mb-4">You Enjoy the Benefits</h3>
-                <p className="text-[#494551] text-sm leading-relaxed max-w-sm">
-                  Enjoy a beautiful weekend retreat, fresh farm yields, and long-term land appreciation without lifting a finger.
-                </p>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* Why JD Homes Section */}
-      <section className="w-full bg-[#193A22] py-20 md:py-32 relative overflow-hidden" id="why-jd-homes-section">
-        {/* Subtle glowing elements */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#D4B47C]/5 rounded-full blur-[150px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#FAF7F0]/5 rounded-full blur-[120px] pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
-            <span className="text-[#D4B47C] font-bold tracking-[0.2em] uppercase text-xs mb-4 block">
-              The Developer
-            </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-white font-headline leading-tight">
-              Why JD Homes?
-            </h2>
-            <div className="w-16 h-1 bg-[#D4B47C] mx-auto mt-6 rounded-full" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-            
-            {/* Pillar 1 */}
-            <div className="bg-white/5 border border-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-10 hover:bg-white/10 transition-colors duration-300">
-              <div className="w-14 h-14 rounded-2xl bg-[#D4B47C]/20 flex items-center justify-center mb-8 border border-[#D4B47C]/30">
-                <Award size={28} className="text-[#D4B47C]" />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Proven Track Record</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                A legacy of creating premium, high-value farm communities. We deliver on our promises, transforming barren lands into lush, thriving estates that consistently appreciate.
-              </p>
-            </div>
-
-            {/* Pillar 2 */}
-            <div className="bg-white/5 border border-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-10 hover:bg-white/10 transition-colors duration-300">
-              <div className="w-14 h-14 rounded-2xl bg-[#D4B47C]/20 flex items-center justify-center mb-8 border border-[#D4B47C]/30">
-                <Landmark size={28} className="text-[#D4B47C]" />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Absolute Transparency</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                Invest with complete peace of mind. We ensure 100% clear legal titles, strict regulatory compliance, and absolutely zero hidden costs throughout your ownership journey.
-              </p>
-            </div>
-
-            {/* Pillar 3 */}
-            <div className="bg-white/5 border border-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-10 hover:bg-white/10 transition-colors duration-300">
-              <div className="w-14 h-14 rounded-2xl bg-[#D4B47C]/20 flex items-center justify-center mb-8 border border-[#D4B47C]/30">
-                <CheckCircle size={28} className="text-[#D4B47C]" />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4">End-to-End Excellence</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                From meticulous land acquisition and infrastructure development to lifelong, hassle-free estate management, we handle every detail so you don't have to.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-
-      {/* Pricing & Plot Sizes Section */}
+      {/* Why Us Section */}
       <section
-        className="w-full bg-[#FAF7F0] py-20 md:py-32"
-        id="pricing-section"
+        className="w-full bg-[#FAF7F0] py-16 md:py-24"
+        id="why-us-section"
       >
-        <div className="max-w-6xl mx-auto px-6 lg:px-12">
-          
-          <div className="bg-[#193A22] rounded-[2.5rem] p-10 md:p-16 shadow-2xl relative overflow-hidden text-center border border-[#D4B47C]/20">
-            {/* Decorative subtle blurs inside the card */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#D4B47C]/10 rounded-full blur-[100px] pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#D4B47C]/10 rounded-full blur-[100px] pointer-events-none" />
-            
-            <div className="relative z-10">
-              <span className="text-[#D4B47C] font-bold tracking-[0.2em] uppercase text-xs mb-4 block">
-                Limited-Period Opportunity
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
+          <span className="text-[#D4B47C] font-bold tracking-[0.2em] uppercase text-xs mb-3 block">
+            Why Prashantha Vana
+          </span>
+          <h2 className="text-3xl md:text-5xl font-bold text-[#1d1b20] mb-16 font-headline leading-tight">
+            Designed for Peace Managed
+            <br />
+            for Convenience
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div className="bg-white rounded-2xl p-8 shadow-lg text-left border-t-4 border-[#D4B47C] flex flex-col hover:-translate-y-1 transition-transform duration-300">
+              <span className="text-2xl font-serif font-bold text-[#193A22] mb-4">
+                I
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-12 md:mb-16 font-headline tracking-tight">
-                Pricing & Plot Sizes
-              </h2>
+              <h3 className="text-sm font-bold text-[#1d1b20] mb-3">
+                Individual Ownership
+              </h3>
+              <p className="text-xs md:text-sm text-[#494551] leading-relaxed">
+                Own a clearly identified private farmland plot within a secure,
+                planned community.
+              </p>
+            </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 md:mb-16 divide-y md:divide-y-0 md:divide-x divide-[#D4B47C]/20">
-                <div className="flex flex-col items-center pt-8 md:pt-0 first:pt-0">
-                  <div className="text-3xl md:text-5xl text-[#D4B47C] mb-2 flex items-start justify-center font-bold">
-                    <span className="text-xl md:text-2xl mt-1 md:mt-2 mr-1">₹</span>
-                    <span>799</span>
-                  </div>
-                  <span className="text-white/80 text-sm">
-                    Special Price per sq. ft.*
-                  </span>
-                </div>
-                <div className="flex flex-col items-center pt-8 md:pt-0">
-                  <div className="text-3xl md:text-5xl text-[#D4B47C] mb-2 flex items-start justify-center font-bold">
-                    <span className="text-xl md:text-2xl mt-1 md:mt-2 mr-1">₹</span>
-                    <span>56</span>
-                    <span className="text-2xl md:text-3xl mt-auto mb-1 ml-1">L</span>
-                  </div>
-                  <span className="text-white/80 text-sm">
-                    Investment Starts From*
-                    <br />
-                    <span className="text-[#D4B47C] inline-block mt-1 text-xs">
-                      Limited-Period Opportunity
-                    </span>
-                  </span>
-                </div>
-                <div className="flex flex-col items-center pt-8 md:pt-0">
-                  <div className="text-3xl md:text-4xl text-[#D4B47C] mb-3 flex items-start justify-center font-bold mt-1">
-                    <span>6,000–15,000</span>
-                  </div>
-                  <span className="text-white/80 text-sm">
-                    Available Plot Sizes (sq. ft.)
-                  </span>
-                </div>
-              </div>
+            <div className="bg-white rounded-2xl p-8 shadow-lg text-left border-t-4 border-[#D4B47C] flex flex-col hover:-translate-y-1 transition-transform duration-300">
+              <span className="text-2xl font-serif font-bold text-[#193A22] mb-4">
+                II
+              </span>
+              <h3 className="text-sm font-bold text-[#1d1b20] mb-3">
+                Professionally Managed
+              </h3>
+              <p className="text-xs md:text-sm text-[#494551] leading-relaxed">
+                Enjoy farmland ownership without the daily responsibility of
+                maintaining the plantation and common infrastructure.
+              </p>
+            </div>
 
-              <div className="flex flex-col items-center justify-center gap-6 mt-8">
-                <button
-                  onClick={scrollToForm}
-                  className="bg-[#D4B47C] text-[#193A22] px-10 py-4 rounded-full font-bold text-base hover:bg-white transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
-                >
-                  Check Plot Availability
-                </button>
-                <p className="text-white/40 text-[10px] md:text-xs max-w-md mx-auto">
-                  *Prices and availability are subject to change. Terms and conditions apply.
-                </p>
-              </div>
+            <div className="bg-white rounded-2xl p-8 shadow-lg text-left border-t-4 border-[#D4B47C] flex flex-col hover:-translate-y-1 transition-transform duration-300">
+              <span className="text-2xl font-serif font-bold text-[#193A22] mb-4">
+                III
+              </span>
+              <h3 className="text-sm font-bold text-[#1d1b20] mb-3">
+                Connected Yet Peaceful
+              </h3>
+              <p className="text-xs md:text-sm text-[#494551] leading-relaxed">
+                Experience peaceful countryside living with convenient main-road
+                connectivity near Gauribidanur.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 shadow-lg text-left border-t-4 border-[#D4B47C] flex flex-col hover:-translate-y-1 transition-transform duration-300">
+              <span className="text-2xl font-serif font-bold text-[#193A22] mb-4">
+                IV
+              </span>
+              <h3 className="text-sm font-bold text-[#1d1b20] mb-3">
+                Lifestyle and Investment
+              </h3>
+              <p className="text-xs md:text-sm text-[#494551] leading-relaxed">
+                Use your farmland as a weekend retreat, family escape or
+                long-term land investment.
+              </p>
             </div>
           </div>
 
+          <button
+            onClick={scrollToForm}
+            className="border border-[#193A22] text-[#193A22] px-10 py-3 rounded-full font-bold text-sm hover:bg-[#193A22] hover:text-white transition-colors duration-300"
+          >
+            Schedule a Site Visit
+          </button>
         </div>
       </section>
 
+      {/* Investment Opportunity Section */}
+      <section
+        className="w-full bg-[#193A22] relative overflow-hidden border-y border-[#D4B47C]/20"
+        id="investment-opportunity"
+      >
+        {/* Decorative blur */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-[#D4B47C]/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#D4B47C]/5 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="py-16 md:py-20 px-6 lg:px-12 max-w-7xl mx-auto relative z-10 text-center">
+          <span className="text-[#D4B47C] font-bold tracking-[0.2em] uppercase text-xs mb-4 block">
+            Limited-Period Opportunity
+          </span>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-12 md:mb-16 font-headline tracking-tight">
+            Own a Piece of the Forest
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 md:mb-16 divide-y md:divide-y-0 md:divide-x divide-[#D4B47C]/20">
+            <div className="flex flex-col items-center pt-8 md:pt-0 first:pt-0">
+              <div className="text-3xl md:text-4xl text-[#D4B47C] mb-2 flex items-start justify-center font-bold">
+                <span className="text-xl md:text-2xl mt-0.5 md:mt-1 mr-0.5">
+                  ₹
+                </span>
+                <span>799</span>
+              </div>
+              <span className="text-white/80 text-xs text-center">
+                Special Price per sq. ft.*
+              </span>
+            </div>
+            <div className="flex flex-col items-center pt-8 md:pt-0">
+              <div className="text-3xl md:text-4xl text-[#D4B47C] mb-1 flex items-start justify-center font-bold">
+                <span className="text-xl md:text-2xl mt-0.5 md:mt-1 mr-0.5">
+                  ₹
+                </span>
+                <span>56</span>
+                <span className="text-xl md:text-2xl mt-auto mb-0.5 ml-1">
+                  L
+                </span>
+              </div>
+              <span className="text-white/80 text-xs text-center">
+                Investment Starts From*
+                <br />
+                <span className="text-[#D4B47C] inline-block mt-1">
+                  Limited-Period Opportunity
+                </span>
+              </span>
+            </div>
+            <div className="flex flex-col items-center pt-8 md:pt-0">
+              <div className="text-3xl md:text-4xl text-[#D4B47C] mb-2 flex items-start justify-center font-bold">
+                <span>6,000–15,000</span>
+              </div>
+              <span className="text-white/80 text-xs text-center">
+                Available Plot Sizes (sq. ft.)
+              </span>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center justify-center gap-6">
+            <button
+              onClick={scrollToForm}
+              className="bg-[#D4B47C] text-[#193A22] px-8 py-3 rounded-full font-bold text-sm hover:bg-white transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
+            >
+              Check Plot Availability
+            </button>
+            <p className="text-white/50 text-[10px] max-w-md mx-auto">
+              *Prices and availability are subject to change. Terms and
+              conditions apply.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      
+      {/* Standalone CTA */}
+      <section className="w-full bg-[#D4B47C] py-12 border-t border-black/10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col text-center md:text-left">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#193A22] font-headline mb-2">Ready to Own a Piece of the Forest?</h2>
+            <p className="text-[#193A22]/80 text-sm md:text-base">Experience Prashantha Vana firsthand. Schedule a no-obligation, personally guided site visit.</p>
+          </div>
+          <button onClick={scrollToForm} className="bg-[#193A22] text-white px-8 py-4 rounded-full font-bold text-sm hover:bg-[#0E2516] transition-colors shadow-lg whitespace-nowrap">
+            Schedule Your Visit
+          </button>
+        </div>
+      </section>
 {/* FAQ Section */}
       <section className="w-full bg-[#EEE3D3] py-16 md:py-24" id="faq-section">
         <div className="max-w-4xl mx-auto px-6 lg:px-12">
@@ -814,6 +872,50 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
               ))}
             </div>
 
+            <div className="w-full h-px bg-white/20 mb-10" />
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
+              <div className="flex flex-col">
+                <span className="text-3xl font-bold text-[#D4B47C]">
+                  10
+                </span>
+                <span className="text-[10px] uppercase tracking-wider text-white/60 mt-1">
+                  Acres
+                </span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-3xl font-bold text-[#D4B47C]">
+                  47
+                </span>
+                <span className="text-[10px] uppercase tracking-wider text-white/60 mt-1">
+                  Plots
+                </span>
+              </div>
+              <div className="flex flex-col">
+                <div className="text-3xl font-bold text-[#D4B47C] flex items-start">
+                  <span className="text-xl mt-1 mr-0.5">₹</span>
+                  <span>56</span>
+                  <span className="text-xl mt-auto mb-0.5 ml-1">L</span>
+                </div>
+                <span className="text-[10px] uppercase tracking-wider text-white/60 mt-1">
+                  Starting From
+                </span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-3xl font-bold text-[#D4B47C] flex items-end">
+                  <span>75</span>
+                  <span className="text-xl mb-0.5 ml-1">min</span>
+                </span>
+                <span className="text-[10px] uppercase tracking-wider text-white/60 mt-1">
+                  From Bengaluru
+                </span>
+              </div>
+            </div>
+
+            <p className="text-xs text-white/50 leading-relaxed">
+              Main-Road Connected &nbsp;|&nbsp; Individual Plot Ownership
+              &nbsp;|&nbsp; Water & Electricity &nbsp;|&nbsp; 24×7 Security
+            </p>
           </div>
 
           {/* Right Column: Form Card */}

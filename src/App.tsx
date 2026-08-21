@@ -112,7 +112,7 @@ export default function App() {
 
       {/* Floating WhatsApp Icon */}
       <a
-        href="https://wa.me/919523879894" 
+        href="https://wa.me/9118003132718" 
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-24 md:bottom-6 right-6 lg:bottom-10 lg:right-10 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-[0_8px_30px_rgb(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgb(37,211,102,0.4)] hover:scale-110 transition-all duration-300 z-50 group"
@@ -126,7 +126,7 @@ export default function App() {
       {/* Mobile Bottom Sticky Bar */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#1d1b20] flex items-center shadow-[0_-8px_30px_rgb(0,0,0,0.3)]">
         <a 
-          href="tel:+919523879894" 
+          href="tel:18003132718" 
           className="flex-1 py-4 flex items-center justify-center gap-2 text-white font-bold text-sm bg-transparent border-r border-white/10"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
