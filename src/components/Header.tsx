@@ -11,11 +11,12 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { id: 'philosophy-section', label: 'Overview' },
-    { id: 'lifestyle-experience', label: 'Lifestyle' },
-    { id: 'amenities-section', label: 'Amenities' },
-    { id: 'location-advantage-section', label: 'Location' },
+    { id: 'why-us-section', label: 'Overview' },
     { id: 'gallery-section', label: 'Gallery' },
+    { id: 'location-advantage-section', label: 'Location' },
+    { id: 'amenities-section', label: 'Amenities' },
+    { id: 'how-it-works-section', label: 'How It Works' },
+    { id: 'pricing-section', label: 'Pricing' },
     { id: 'faq-section', label: 'FAQ' },
   ];
 

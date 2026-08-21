@@ -293,7 +293,7 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
             {/* Row 1 Right 1 */}
             <div className="shrink-0 snap-center w-[85vw] md:w-auto col-span-1 rounded-2xl overflow-hidden shadow-lg h-[60vw] md:h-[200px]">
               <img
-                src="/gallery/2.jpg"
+                src="/gallery/2.png"
                 alt="Fruit Picking"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
@@ -512,7 +512,7 @@ export default function HomeTab({ setActiveTab, onSetPrefillConsultation }: Home
 
             <div className="relative h-64 md:h-72 rounded-3xl overflow-hidden group">
               <img
-                src="/landscaped.jpg"
+                src="/landscape.png"
                 alt="Landscaped Common Areas"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
